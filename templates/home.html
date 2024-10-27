@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CANVAS API</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>CANVAS API</h1>
+    {% for api in apis %}
+        <div class="api-card">
+            <h2>{{ api.name }}</h2>
+            <p>{{ api.description }}</p>
+            <a href="{{ api.endpoint | replace('<word>', 'example') }}">Try {{ api.name }}</a>
+        </div>
+    {% endfor %}
+</body>
+</html>
